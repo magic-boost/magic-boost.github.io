@@ -64,27 +64,25 @@
 
         <h1>Abstract</h1>
         <p style="width: 80%;text-align: justify">
-            Benefiting from the rapid development of 2D diffusion models, 
+            Benefiting from the rapid development of 2D diffusion models,
             3D content creation has made significant progress recently. 
             One promising solution involves the fine-tuning of pre-trained 
             2D diffusion models to harness their capacity for producing 
             multi-view images, which are then lifted into accurate 3D models 
             via methods like fast-NeRFs or large reconstruction models. 
-            However, as inconsistency still exists and limited generated 
-            resolution, the generation results of such methods still lack 
-            intricate textures and complex geometries. To solve this problem, 
-            we propose Magic-Boost, a multi-view conditioned diffusion model 
-            that significantly refines coarse generative results through a 
-            brief period of SDS optimization (~15min).  Compared to 
-            the previous text or single image based diffusion models, Magic-Boost 
-            exhibits a robust capability to generate images with high 
-            consistency from pseudo multi-view renderings of coarse 3D 
-            assets. It provides precise SDS guidance that aligns with 
-            the identity of the input images, thereby enriching the 
-            local detail in both geometry and texture of the initial 
-            generative results. Extensive experiments show Magic-Boost 
-            greatly enhances the coarse inputs and generates high-quality 
-            3D assets with rich geometric and textural details.
+            However, as inconsistency still exists and limited generated resolution, 
+            the generation results of such methods still lack intricate textures and 
+            complex geometries. To solve this problem, we propose Magic-Boost, 
+            a multi-view conditioned diffusion model that significantly refines
+            coarse generative results through a brief period of SDS optimization 
+            (~15min).  Compared to the previous text or single image based diffusion
+            models, Magic-Boost exhibits a robust capability to generate images with
+            high consistency from pseudo synthesized multi-view images. It provides 
+            precise SDS guidance that aligns with the identity of the input images, 
+            thereby enriching the local detail in both geometry and texture of the 
+            initial generative results. Extensive experiments show Magic-Boost greatly 
+            enhances the coarse inputs and generates high-quality 3D assets with rich
+            geometric and textural details.
             <br>
             <br>
         </p>
@@ -107,22 +105,25 @@
 
         <h1>Results</h1>
         <div class="new-container">
-            <table width="1200" class="center">
+            <table width="1600" class="center">
                 <tr>
-                    <td width="25%" style="text-align:center;"><b>Input</b></td>
-                    <td width="25%" style="text-align:center;"><b>MV Images</b></td>
-                    <td width="25%" style="text-align:center;"><b>Coarse Output</b></td>
-                    <td width="25%" style="text-align:center;"><b>Ours</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Input</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>MV Images</b></td>
+                    <td width="33.3%" style="text-align:center;"><b>Coarse Output</b></td>
+                    <td width="33.3%" style="text-align:center;"><b>Ours</b></td>
                 </tr>
             </table>
         </div>
 
         <div class="new-container">
-            <table width="1200" class="center">
+            <table width="1600" class="center">
                 <tr>
                     <td><img width=100% src="./demos/armor/input.png"></td>
                     <td><img width=100% src="./demos/armor/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/armor/armor_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/armor/armor_final.mp4" style="width: 100%; height: auto"></video></td>
+ 
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -141,7 +142,7 @@
                                 <canvas height="100" class="videoMerge" id="ex2Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -151,7 +152,10 @@
                 <tr>
                     <td><img width=100% src="./demos/sideview_armor/input.png"></td>
                     <td><img width=100% src="./demos/sideview_armor/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/sideview_armor/sideview_armor_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/sideview_armor/sideview_armor_final.mp4" style="width: 100%; height: auto"></video></td>
+ 
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -170,7 +174,7 @@
                                 <canvas height="100" class="videoMerge" id="ex4Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -180,7 +184,10 @@
                 <tr>
                     <td><img width=100% src="./demos/frog/input.png"></td>
                     <td><img width=100% src="./demos/frog/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/frog/frog_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/frog/frog_final.mp4" style="width: 100%; height: auto"></video></td>
+ 
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex5" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -199,7 +206,7 @@
                                 <canvas height="100" class="videoMerge" id="ex6Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -209,7 +216,10 @@
                 <tr>
                     <td><img width=100% src="./demos/islamic_girl/input.png"></td>
                     <td><img width=100% src="./demos/islamic_girl/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/islamic_girl/islamic_girl_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/islamic_girl/islamic_girl_final.mp4" style="width: 100%; height: auto"></video></td>
+
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex7" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -228,7 +238,7 @@
                                 <canvas height="100" class="videoMerge" id="ex8Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -238,7 +248,10 @@
                 <tr>
                     <td><img width=100% src="./demos/barbie/input.png"></td>
                     <td><img width=100% src="./demos/barbie/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/barbie/barbie_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/barbie/barbie_final.mp4" style="width: 100%; height: auto"></video></td>
+
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex9" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -257,7 +270,7 @@
                                 <canvas height="100" class="videoMerge" id="ex10Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -267,7 +280,10 @@
                 <tr>
                     <td><img width=100% src="./demos/white_red_robot/input.png"></td>
                     <td><img width=100% src="./demos/white_red_robot/mvimage.png"></td>
-                    <td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/white_red_robot/white_red_robot_org.mp4" style="width: 100%; height: auto;"></video></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos/white_red_robot/white_red_robot_final.mp4" style="width: 100%; height: auto"></video></td>
+
+                    <!-- <td>
                         <div class="row captioned_videos">
                             <div class="video-compare-container" style="width: 100%">
                                 <video class="video lazy" id="ex11" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
@@ -286,7 +302,7 @@
                                 <canvas height="100" class="videoMerge" id="ex12Merge" width="100"></canvas>
                             </div>
                         </div> 
-                    </td>
+                    </td> -->
                 </tr>
             </table>
         </div>
@@ -304,12 +320,11 @@
         <h1>Method</h1>
 
         <p style="width: 80%;text-align: justify">
-            <b>The overall pipeline of our method. </b> We build MagicBoost with Instant3D
-             (a synergy of Multi-view Diffusion (MVDiff) and Large Reconstruction Model (LRM)), 
-             which provides pseudo multi-view images together with a 3D coarse model. 
-             Capitalizing on the generated multi-view inputs, our model provides precise 
-             SDS guidance,  thereby significantly augmenting the coarse results within a brief interval
-            (~15min).
+            <b>The overall pipeline of our method. </b>We build MagicBoost with Instant3D
+            (a synergy of Multi-view Diffusion (MVDiff) and Large Reconstruction Model (LRM)),
+            which provides pseudo multi-view images together with a coarse 3D output. 
+            Conditioned on the generated multi-view inputs, our model provides precise
+            SDS guidance, significantly augmenting the coarse 3D outputs within a brief interval (~15min).
         </p>
         <div class="img-with-text">
             <img width="900" src="./demos/pipeline.png" />
@@ -323,14 +338,163 @@
         <hr>
 
 
-        <h1>Comparison with other methods</h1>
-        <div class="img-with-text">
+        <h1>Comparison with other Image-to-3D methods</h1>
+        <!-- <div class="img-with-text">
             <img width="900" src="./demos/qualitative.png" />
+        </div> -->
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td width="16.6%" style="text-align:center;"><b>Input</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Zero123-XL</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Magic123</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Imagedream</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Coarse output</b></td>
+                    <td width="16.6%" style="text-align:center;"><b>Ours</b></td>
+                </tr>
+            </table>
         </div>
-       
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/armor/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/armor/armor_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/bear/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/bear/bear_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/butterfly/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/butterfly/butterfly_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/corgi/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/corgi/corgi_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div> -->
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/horse/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/horse/horse_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/tank/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/tank/tank_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/trump/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/trump/trump_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos2/armor/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos2/armor/armor_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div> -->
         <br>
+        <!-- <div class="content has-text-justified">
+            <p style="width: 1000;text-align: justify;">
+                <b>Figure 2.</b> Qualitative Comparisons with other Image-to-3D methods.
+            </p> -->
         
         <br><br>
+
+        <h1>Comparison with other Boost methods</h1>
+        <!-- <div class="img-with-text">
+            <img width="900" src="./demos/qualitative.png" />
+        </div> -->
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td width="20%" style="text-align:center;"><b>Input</b></td>
+                    <td width="20%" style="text-align:center;"><b>Coarse output</b></td>
+                    <td width="20%" style="text-align:center;"><b>Stable Diffusion Boost</b></td>
+                    <td width="20%" style="text-align:center;"><b>Zero123-XL Boost</b></td>
+                    <td width="20%" style="text-align:center;"><b>Ours</b></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos3/armor/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos3/armor/armor_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos3/bear/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos3/bear/bear_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos3/squirrel/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos3/squirrel/squirrel_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos3/frog/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos3/frog/frog_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="new-container">
+            <table width="1600" class="center">
+                <tr>
+                    <td><img width=100% src="./demos3/white_hat_woman/input.png"></td>
+                    <td><video muted autoplay="autoplay" loop="loop" src="./demos3/white_hat_woman/white_hat_woman_all.mp4" style="width: 100%; height: auto;"></video></td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 
     <hr class="divider" />
