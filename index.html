@@ -64,38 +64,16 @@
 
         <h1>Abstract</h1>
         <p style="width: 80%;text-align: justify">
-            Benefiting from the rapid development of 2D diffusion models,
-            3D content creation has made significant progress recently. 
-            One promising solution involves the fine-tuning of pre-trained 
-            2D diffusion models to harness their capacity for producing 
-            multi-view images, which are then lifted into accurate 3D models 
-            via methods like fast-NeRFs or large reconstruction models. 
-            However, as inconsistency still exists and limited generated resolution, 
-            the generation results of such methods still lack intricate textures and 
-            complex geometries. To solve this problem, we propose Magic-Boost, 
-            a multi-view conditioned diffusion model that significantly refines
-            coarse generative results through a brief period of SDS optimization 
-            (~15min).  Compared to the previous text or single image based diffusion
-            models, Magic-Boost exhibits a robust capability to generate images with
-            high consistency from pseudo synthesized multi-view images. It provides 
-            precise SDS guidance that aligns with the identity of the input images, 
-            thereby enriching the local detail in both geometry and texture of the 
-            initial generative results. Extensive experiments show Magic-Boost greatly 
-            enhances the coarse inputs and generates high-quality 3D assets with rich
-            geometric and textural details.
+            Benefiting from the rapid development of 2D diffusion models, 3D content creation has made significant progress recently. One promising solution involves the fine-tuning of pre-trained 2D diffusion models to harness their capacity for producing multi-view images, which are then lifted into accurate 3D models via sparse-view reconstruction methods like large reconstruction models. However, as inconsistency still exists and limited reconstruction resolution, the generation results of such methods still lack intricate textures and complex geometries. In this paper, we present Magic-Boost, a multi-view conditioned diffusion model that explores the strong 3d prior provided by the synthesized multi-view images to refine the coarse generated results. Enabled with pseudo multi-view images, Magic-Boost provides precise SDS guidance that well aligns with the identity of the input images, enriching the local detail in both geometry and texture within a short period of optimization ($\sim15$min). Extensive experiments show Magic-Boost greatly enhances the coarse generated inputs, generates high-quality 3D assets with rich geometric and textural details.
             <br>
             <br>
         </p>
         <div class="img-with-text">
-            <img width="800" src="./demos/show.png">
+            <img width="800" src="./demos/teaser.png">
         </div>
         <div class="content has-text-justified">
         <p style="width: 750;text-align: justify;">
-            <b>Figure 1.</b> Provided with an input image and its  coarse 3D generation, MagicBoost  
-            effectively boosts it to a high-quality 3D asset within 15 minutes. 
-            From left to right, we show the input image, pesudo multi-view images and coarse 
-            3D results from Instant3D, together with the significantly improved results
-            produced by our method.
+            <b>Figure 1.</b> Provided with the strong 3D prior from the pesudo multi-view images, Magic-Boost effectively boosts the coarse reconstruction results into a high-quality 3D asset within 15 minutes.
         </p>
         </div>
         <p></p>
@@ -320,11 +298,8 @@
         <h1>Method</h1>
 
         <p style="width: 80%;text-align: justify">
-            <b>The overall pipeline of our method. </b>We build MagicBoost with Instant3D
-            (a synergy of Multi-view Diffusion (MVDiff) and Large Reconstruction Model (LRM)),
-            which provides pseudo multi-view images together with a coarse 3D output. 
-            Conditioned on the generated multi-view inputs, our model provides precise
-            SDS guidance, significantly augmenting the coarse 3D outputs within a brief interval (~15min).
+            <b>The overall pipeline. The proposed Magic-Boost could be a plug-in module plugged into any 3D generation methods capable of providing
+                pseudo multi-view priors, such as Instant3D, InstantMesh, LGM and etc. Benefit from the strong 3d priors provided by the pesudo multi-view images, Magic-boost provides precise SDS guidance, significantly enhancing the coarse 3D outputs within a brief interval (~15min).
         </p>
         <div class="img-with-text">
             <img width="900" src="./demos/pipeline.png" />
